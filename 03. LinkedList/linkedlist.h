@@ -1,6 +1,6 @@
 #pragma once
 
-#include <iostream>
+#include <sstream>
 
 template<typename T>
 class LinkedList {
@@ -15,6 +15,17 @@ public:
         _sentinel->prev = _sentinel;
     }
     
+    ~LinkedList()
+    {
+        Node* p = _sentinel->next;
+        while (p != _sentinel) {
+            Node* q = p;
+            p = p->next;
+            delete q;
+        }
+        delete _sentinel;
+    }
+
     // Complexity: O(1)
     void insert_front(T value)
     {
@@ -26,10 +37,31 @@ public:
         _sentinel->next = p;
         _size++;
     }
-    
+
+    // Complexity: O(1)
     int size() const
     {
         return _size;
+    }
+
+    // Complexity: O(N)
+    std::string to_string() const
+    {
+        std::ostringstream result;
+        result << "[";
+        bool first_time = true;
+        Node* p = _sentinel->next;
+        while (p != _sentinel) {
+            if (first_time) {
+                first_time = false;
+            } else {
+                result << ", ";
+            }
+            result << p->value;
+            p = p->next;
+        }
+        result << "]";
+        return result.str();
     }
 
 private:

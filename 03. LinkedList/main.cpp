@@ -3,5 +3,11 @@
 
 int main()
 {
+    LinkedList<int> lst;
+    lst.insert_front(5);
+    lst.insert_front(1);
+    lst.insert_front(2);
+    std::cout << lst.to_string() << "\n";
+
     return 0;
 }

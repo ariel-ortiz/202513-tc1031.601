@@ -30,14 +30,14 @@ TEST_CASE("test the LinkedList class")
     d.insert_front(76.125);
     d.insert_front(-5.5);
 
-    // SECTION("test to_string") {
-    //     REQUIRE(a.to_string() == "[]");
-    //     REQUIRE(b.to_string() == "[4, 3, 2, 1]");
-    //     REQUIRE(c.to_string()
-    //         == "[dseta, épsilon, delta, gamma, beta, alfa]");
-    //     REQUIRE(d.to_string()
-    //         == "[-5.5, 76.125, 0, 42, 10.75, -4.25, 2.5, 1]");
-    // }
+    SECTION("test to_string") {
+        REQUIRE(a.to_string() == "[]");
+        REQUIRE(b.to_string() == "[4, 3, 2, 1]");
+        REQUIRE(c.to_string()
+            == "[dseta, épsilon, delta, gamma, beta, alfa]");
+        REQUIRE(d.to_string()
+            == "[-5.5, 76.125, 0, 42, 10.75, -4.25, 2.5, 1]");
+    }
 
     SECTION("test size") {
         REQUIRE(a.size() == 0);
