@@ -19,19 +19,31 @@ IntList cons_end(int value, const IntList& a)
     return cons(first(a), cons_end(value, rest(a)));
 }
 
+// Complexity: O(N)
 int sum(const IntList& a)
 {
-    return 0;
+    if (is_empty(a)) {
+        return 0;
+    }
+    return first(a) + sum(rest(a));
 }
 
+// Complexity: O(N)
 IntList duplicate(const IntList& a)
 {
-    return IntList {};
+    if (is_empty(a)) {
+        return a;
+    }
+    return cons(first(a), cons(first(a), duplicate(rest(a))));
 }
 
+// Complexity: O(N)
 int last(const IntList& a)
 {
-    return 0;
+    if (is_empty(rest(a))) { // is the size of a = 1?
+        return first(a);
+    }
+    return last(rest(a));
 }
 
 IntList but_last(const IntList& a)
