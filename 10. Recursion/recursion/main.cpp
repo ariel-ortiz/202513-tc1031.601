@@ -10,5 +10,6 @@ int main()
     std::cout << sum(a) << "\n";
     std::cout << duplicate(a) << "\n";
     std::cout << last(a) << "\n";
+    std::cout << merge(IntList {1, 4, 6, 10}, IntList {0, 1, 2, 2, 5, 10, 14}) << "\n";
     return 0;
 }
