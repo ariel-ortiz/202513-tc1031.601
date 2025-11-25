@@ -79,83 +79,83 @@ TEST_CASE("test the TreeSet class")
         REQUIRE_FALSE(h.contains(16));
     }
 
-    // SECTION("test inorder") {
-    //     std::vector<std::string> vs1, vs2, vs3, vs4;
-    //     std::vector<int> vi1, vi2, vi3, vi4;
-    //     a.inorder([&] (std::string s) { vs1.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {} == vs1);
-    //     b.inorder([&] (std::string s) { vs2.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {"a"} == vs2);
-    //     c.inorder([&] (std::string s) { vs3.push_back(s); });
-    //     REQUIRE(std::vector<std::string> { "a", "g", "k", "m", "p",
-    //         "r", "z" } == vs3);
-    //     d.inorder([&] (std::string s) { vs4.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {"a", "b", "c", "d", "e",
-    //         "f", "g"} == vs4);
-    //     e.inorder([&] (int i) { vi1.push_back(i); });
-    //     REQUIRE(std::vector<int> {5, 10, 12, 15, 16, 17, 18, 19, 20,
-    //         22, 25, 30, 33, 35, 40} == vi1);
-    //     f.inorder([&] (int i) { vi2.push_back(i); });
-    //     REQUIRE(std::vector<int> {1, 2, 3, 4, 5, 6, 7, 8} == vi2);
-    //     g.inorder([&] (int i) { vi3.push_back(i); });
-    //     REQUIRE(std::vector<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-    //         12, 13, 14, 15} == vi3);
-    //     h.inorder([&] (int i) { vi4.push_back(i); });
-    //     REQUIRE(std::vector<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-    //         12, 13, 14, 15} == vi4);
-    // }
+    SECTION("test inorder") {
+        std::vector<std::string> vs1, vs2, vs3, vs4;
+        std::vector<int> vi1, vi2, vi3, vi4;
+        a.inorder([&] (std::string s) { vs1.push_back(s); });
+        REQUIRE(std::vector<std::string> {} == vs1);
+        b.inorder([&] (std::string s) { vs2.push_back(s); });
+        REQUIRE(std::vector<std::string> {"a"} == vs2);
+        c.inorder([&] (std::string s) { vs3.push_back(s); });
+        REQUIRE(std::vector<std::string> { "a", "g", "k", "m", "p",
+            "r", "z" } == vs3);
+        d.inorder([&] (std::string s) { vs4.push_back(s); });
+        REQUIRE(std::vector<std::string> {"a", "b", "c", "d", "e",
+            "f", "g"} == vs4);
+        e.inorder([&] (int i) { vi1.push_back(i); });
+        REQUIRE(std::vector<int> {5, 10, 12, 15, 16, 17, 18, 19, 20,
+            22, 25, 30, 33, 35, 40} == vi1);
+        f.inorder([&] (int i) { vi2.push_back(i); });
+        REQUIRE(std::vector<int> {1, 2, 3, 4, 5, 6, 7, 8} == vi2);
+        g.inorder([&] (int i) { vi3.push_back(i); });
+        REQUIRE(std::vector<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+            12, 13, 14, 15} == vi3);
+        h.inorder([&] (int i) { vi4.push_back(i); });
+        REQUIRE(std::vector<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+            12, 13, 14, 15} == vi4);
+    }
 
-    // SECTION("test preorder") {
-    //     std::vector<std::string> vs1, vs2, vs3, vs4;
-    //     std::vector<int> vi1, vi2, vi3, vi4;
-    //     a.preorder([&] (std::string s) { vs1.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {} == vs1);
-    //     b.preorder([&] (std::string s) { vs2.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {"a"} == vs2);
-    //     c.preorder([&] (std::string s) { vs3.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {"m", "g", "a", "k", "r",
-    //         "p", "z"} == vs3);
-    //     d.preorder([&] (std::string s) { vs4.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {"d", "c", "b", "a", "e",
-    //         "f", "g"} == vs4);
-    //     e.preorder([&] (int i) { vi1.push_back(i); });
-    //     REQUIRE(std::vector<int> {22, 10, 5, 15, 12, 17, 16, 19, 18,
-    //         20, 30, 25, 35, 33, 40} == vi1);
-    //     f.preorder([&] (int i) { vi2.push_back(i); });
-    //     REQUIRE(std::vector<int> {8, 1, 7, 2, 6, 3, 5, 4} == vi2);
-    //     g.preorder([&] (int i) { vi3.push_back(i); });
-    //     REQUIRE(std::vector<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-    //         12, 13, 14, 15} == vi3);
-    //     h.preorder([&] (int i) { vi4.push_back(i); });
-    //     REQUIRE(std::vector<int> {8, 4, 2, 1, 3, 6, 5, 7, 12, 10, 9,
-    //         11, 14, 13, 15} == vi4);
-    // }
+    SECTION("test preorder") {
+        std::vector<std::string> vs1, vs2, vs3, vs4;
+        std::vector<int> vi1, vi2, vi3, vi4;
+        a.preorder([&] (std::string s) { vs1.push_back(s); });
+        REQUIRE(std::vector<std::string> {} == vs1);
+        b.preorder([&] (std::string s) { vs2.push_back(s); });
+        REQUIRE(std::vector<std::string> {"a"} == vs2);
+        c.preorder([&] (std::string s) { vs3.push_back(s); });
+        REQUIRE(std::vector<std::string> {"m", "g", "a", "k", "r",
+            "p", "z"} == vs3);
+        d.preorder([&] (std::string s) { vs4.push_back(s); });
+        REQUIRE(std::vector<std::string> {"d", "c", "b", "a", "e",
+            "f", "g"} == vs4);
+        e.preorder([&] (int i) { vi1.push_back(i); });
+        REQUIRE(std::vector<int> {22, 10, 5, 15, 12, 17, 16, 19, 18,
+            20, 30, 25, 35, 33, 40} == vi1);
+        f.preorder([&] (int i) { vi2.push_back(i); });
+        REQUIRE(std::vector<int> {8, 1, 7, 2, 6, 3, 5, 4} == vi2);
+        g.preorder([&] (int i) { vi3.push_back(i); });
+        REQUIRE(std::vector<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+            12, 13, 14, 15} == vi3);
+        h.preorder([&] (int i) { vi4.push_back(i); });
+        REQUIRE(std::vector<int> {8, 4, 2, 1, 3, 6, 5, 7, 12, 10, 9,
+            11, 14, 13, 15} == vi4);
+    }
 
-    // SECTION("test postorder") {
-    //     std::vector<std::string> vs1, vs2, vs3, vs4;
-    //     std::vector<int> vi1, vi2, vi3, vi4;
-    //     a.postorder([&] (std::string s) { vs1.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {} == vs1);
-    //     b.postorder([&] (std::string s) { vs2.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {"a"} == vs2);
-    //     c.postorder([&] (std::string s) { vs3.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {"a", "k", "g", "p", "z",
-    //         "r", "m"} == vs3);
-    //     d.postorder([&] (std::string s) { vs4.push_back(s); });
-    //     REQUIRE(std::vector<std::string> {"a", "b", "c", "g", "f",
-    //         "e", "d"} == vs4);
-    //     e.postorder([&] (int i) { vi1.push_back(i); });
-    //     REQUIRE(std::vector<int> {5, 12, 16, 18, 20, 19, 17, 15, 10,
-    //         25, 33, 40, 35, 30, 22} == vi1);
-    //     f.postorder([&] (int i) { vi2.push_back(i); });
-    //     REQUIRE(std::vector<int> {4, 5, 3, 6, 2, 7, 1, 8} == vi2);
-    //     g.postorder([&] (int i) { vi3.push_back(i); });
-    //     REQUIRE(std::vector<int> {15, 14, 13, 12, 11, 10, 9, 8, 7, 6,
-    //         5, 4, 3, 2, 1} == vi3);
-    //     h.postorder([&] (int i) { vi4.push_back(i); });
-    //     REQUIRE(std::vector<int> {1, 3, 2, 5, 7, 6, 4, 9, 11, 10, 13,
-    //         15, 14, 12, 8} == vi4);
-    // }
+    SECTION("test postorder") {
+        std::vector<std::string> vs1, vs2, vs3, vs4;
+        std::vector<int> vi1, vi2, vi3, vi4;
+        a.postorder([&] (std::string s) { vs1.push_back(s); });
+        REQUIRE(std::vector<std::string> {} == vs1);
+        b.postorder([&] (std::string s) { vs2.push_back(s); });
+        REQUIRE(std::vector<std::string> {"a"} == vs2);
+        c.postorder([&] (std::string s) { vs3.push_back(s); });
+        REQUIRE(std::vector<std::string> {"a", "k", "g", "p", "z",
+            "r", "m"} == vs3);
+        d.postorder([&] (std::string s) { vs4.push_back(s); });
+        REQUIRE(std::vector<std::string> {"a", "b", "c", "g", "f",
+            "e", "d"} == vs4);
+        e.postorder([&] (int i) { vi1.push_back(i); });
+        REQUIRE(std::vector<int> {5, 12, 16, 18, 20, 19, 17, 15, 10,
+            25, 33, 40, 35, 30, 22} == vi1);
+        f.postorder([&] (int i) { vi2.push_back(i); });
+        REQUIRE(std::vector<int> {4, 5, 3, 6, 2, 7, 1, 8} == vi2);
+        g.postorder([&] (int i) { vi3.push_back(i); });
+        REQUIRE(std::vector<int> {15, 14, 13, 12, 11, 10, 9, 8, 7, 6,
+            5, 4, 3, 2, 1} == vi3);
+        h.postorder([&] (int i) { vi4.push_back(i); });
+        REQUIRE(std::vector<int> {1, 3, 2, 5, 7, 6, 4, 9, 11, 10, 13,
+            15, 14, 12, 8} == vi4);
+    }
 
     // SECTION("test levelorder") {
     //     std::vector<std::string> vs1, vs2, vs3, vs4;

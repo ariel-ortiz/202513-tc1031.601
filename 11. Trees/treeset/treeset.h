@@ -73,6 +73,24 @@ public:
         return _contains(value, _root);
     }
 
+    // Complexity: O(N)
+    void inorder(std::function<void(T)> fn) const
+    {
+        return _inorder(fn, _root);
+    }
+
+    // Complexity: O(N)
+    void preorder(std::function<void(T)> fn) const
+    {
+        return _preorder(fn, _root);
+    }
+
+    // Complexity: O(N)
+    void postorder(std::function<void(T)> fn) const
+    {
+        return _postorder(fn, _root);
+    }
+
 private:
 
     struct Node {
@@ -100,6 +118,36 @@ private:
         }
 
         return _contains(value, p->right);
+    }
+
+    void _inorder(std::function<void(T)> fn, Node* p) const
+    {
+        if (not p) {
+            return;
+        }
+        _inorder(fn, p->left);
+        fn(p->value);
+        _inorder(fn, p->right);
+    }
+
+    void _preorder(std::function<void(T)> fn, Node* p) const
+    {
+        if (not p) {
+            return;
+        }
+        fn(p->value);
+        _preorder(fn, p->left);
+        _preorder(fn, p->right);
+    }
+
+    void _postorder(std::function<void(T)> fn, Node* p) const
+    {
+        if (not p) {
+            return;
+        }
+        _postorder(fn, p->left);
+        _postorder(fn, p->right);
+        fn(p->value);
     }
 
     Node* _root = nullptr;
