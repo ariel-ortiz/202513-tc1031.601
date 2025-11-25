@@ -13,6 +13,14 @@ public:
     // Complexity: O(1)
     TreeSet() {}
 
+    // Complexity: O(N log N)
+    TreeSet(std::initializer_list<T> args)
+    {
+        for (T elem : args) {
+            add(elem);
+        }
+    }
+
     // Complexity: O(log N)
     bool add(T value)
     {
